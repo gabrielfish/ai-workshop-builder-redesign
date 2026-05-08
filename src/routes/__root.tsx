@@ -77,9 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Never build a workshop from scratch again. AI builds your slides, scripts, and patient conversion sequence in minutes." },
       { name: "author", content: "DC Practice Growth" },
       { property: "og:title", content: "TalkDeck — AI Workshop Builder for Chiropractors" },
-      { property: "og:description", content: "Answer a few questions. AI builds your entire workshop in minutes." },
+      { property: "og:description", content: "Never build a workshop from scratch again. AI builds your slides, scripts, and patient conversion sequence in minutes." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "TalkDeck — AI Workshop Builder for Chiropractors" },
+      { name: "twitter:description", content: "Never build a workshop from scratch again. AI builds your slides, scripts, and patient conversion sequence in minutes." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd257541-98da-48f0-8ff0-91c3a82fa57b/id-preview-3e2e8f30--d6abbe05-4fba-4f77-941e-8cc6111509e0.lovable.app-1778199943906.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd257541-98da-48f0-8ff0-91c3a82fa57b/id-preview-3e2e8f30--d6abbe05-4fba-4f77-941e-8cc6111509e0.lovable.app-1778199943906.png" },
     ],
     links: [
       {
