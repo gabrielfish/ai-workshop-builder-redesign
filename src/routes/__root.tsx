@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import geistCss from "geist/font/sans.css?url";
 
 function NotFoundComponent() {
   return (
