@@ -101,6 +101,7 @@ const problems = [
   { n: "03", text: "They're unsure how to present confidently" },
   { n: "04", text: "They worry no one will show up" },
   { n: "05", text: "They don't know how to convert attendees into patients" },
+  { n: "06", text: "They struggle to follow up after the event" },
 ];
 
 function ProblemSection() {
@@ -128,6 +129,15 @@ function ProblemSection() {
         <p className="font-serif italic text-td-teal text-xl md:text-2xl text-center mt-14">
           "That's exactly why we built this."
         </p>
+        <div className="text-center mt-6">
+          <Link
+            to="/growth-lab"
+            className="inline-flex items-center justify-center rounded-md border bg-transparent text-td-text font-sans text-sm font-medium px-5 py-2.5 transition-colors hover:bg-td-text/5"
+            style={{ border: "0.5px solid rgba(10,25,41,0.2)" }}
+          >
+            Join the Growth Lab waitlist →
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -153,11 +163,39 @@ function ProductSection() {
           <br className="hidden md:block" /> We handle everything else.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-          <p className="font-sans text-td-muted text-base leading-relaxed">
-            This is the system we built to remove every barrier chiropractors face
-            when running workshops. In minutes, it builds everything you need to
-            fill your room and convert attendees into long-term patients.
-          </p>
+          <div>
+            <p className="font-sans text-td-muted text-base leading-relaxed mb-8">
+              This is the system we built to remove every barrier chiropractors face
+              when running workshops. In minutes, it builds everything you need to
+              fill your room and convert attendees into long-term patients.
+            </p>
+            {/* Mock slide thumbnail */}
+            <div
+              className="rounded-lg aspect-[16/10] flex items-center justify-center mb-4"
+              style={{ border: "1px solid #1A8FA6" }}
+            >
+              <p className="font-sans text-sm text-td-muted">
+                Your workshop slide deck
+              </p>
+            </div>
+            <p className="font-sans text-sm text-td-text mb-4">
+              Your slides, built and ready to present
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-sans text-td-text bg-td-card"
+                style={{ border: "0.5px solid rgba(10,25,41,0.15)" }}
+              >
+                ⚡ Ready in minutes
+              </span>
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-sans text-td-text bg-td-card"
+                style={{ border: "0.5px solid rgba(10,25,41,0.15)" }}
+              >
+                🎯 Converts attendees into patients
+              </span>
+            </div>
+          </div>
           <div
             className="bg-td-card rounded-lg overflow-hidden"
             style={{ border: "0.5px solid rgba(10,25,41,0.1)" }}
