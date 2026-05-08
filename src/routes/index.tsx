@@ -50,12 +50,10 @@ function Nav() {
   return (
     <nav className="w-full border-b border-td-text/10" style={{ borderWidth: "0.5px" }}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 border border-td-text/40 rounded-sm" style={{ borderWidth: "0.5px" }} />
           <span className="font-serif text-lg font-semibold text-td-text tracking-tight">TalkDeck</span>
         </div>
-        {/* Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-sans">
           <Link to="/training" className="text-td-muted hover:text-td-text transition-colors">
             Training
@@ -74,7 +72,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="max-w-3xl mx-auto px-6 pt-20 pb-16 text-center">
+    <section className="max-w-3xl mx-auto px-6 pt-12 pb-9 md:pt-15 md:pb-12 text-center">
       <Eyebrow>AI WORKSHOP BUILDER</Eyebrow>
       <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.15] text-td-text mb-6">
         Never build a workshop
@@ -106,9 +104,9 @@ const problems = [
 
 function ProblemSection() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
+    <section id="build" className="max-w-6xl mx-auto px-6 py-12 md:py-15">
       <DashedDivider />
-      <div className="pt-16">
+      <div className="pt-10 md:pt-12">
         <Eyebrow>SOUND FAMILIAR?</Eyebrow>
         <h2 className="font-serif text-3xl md:text-4xl font-semibold text-td-text mb-12">
           Most chiropractors know workshops work.
@@ -130,13 +128,13 @@ function ProblemSection() {
           "That's exactly why we built this."
         </p>
         <div className="text-center mt-6">
-          <Link
-            to="/growth-lab"
+          <a
+            href="#build"
             className="inline-flex items-center justify-center rounded-md border bg-transparent text-td-text font-sans text-sm font-medium px-5 py-2.5 transition-colors hover:bg-td-text/5"
             style={{ border: "0.5px solid rgba(10,25,41,0.2)" }}
           >
-            Join the Growth Lab waitlist →
-          </Link>
+            Build my slides →
+          </a>
         </div>
       </div>
     </section>
@@ -144,40 +142,45 @@ function ProblemSection() {
 }
 
 const deliverables = [
-  "Your entire workshop structure",
-  "Your opening script",
-  "Your credibility story",
-  "Audience engagement questions",
-  "Your full slide deck",
-  "Patient conversion sequence",
+  { icon: "📋", text: "Your entire workshop structure" },
+  { icon: "🎤", text: "Your opening script" },
+  { icon: "⭐", text: "Your credibility story" },
+  { icon: "🙋", text: "Audience engagement questions" },
+  { icon: "🖥", text: "Your full slide deck" },
+  { icon: "🔄", text: "Patient conversion sequence" },
 ];
 
 function ProductSection() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-15">
       <DashedDivider />
-      <div className="pt-16">
+      <div className="pt-10 md:pt-12">
         <Eyebrow>THE AI WORKSHOP BUILDER</Eyebrow>
         <h2 className="font-serif text-3xl md:text-4xl font-semibold text-td-text mb-12">
           Answer a few questions.
           <br className="hidden md:block" /> We handle everything else.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12 items-start">
           <div>
             <p className="font-sans text-td-muted text-base leading-relaxed mb-8">
               This is the system we built to remove every barrier chiropractors face
               when running workshops. In minutes, it builds everything you need to
               fill your room and convert attendees into long-term patients.
             </p>
-            {/* Mock slide thumbnail */}
-            <div
-              className="rounded-lg aspect-[16/10] flex items-center justify-center mb-4"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80"
+              className="rounded-lg w-full aspect-[16/10] object-cover mb-4 bg-td-card"
               style={{ border: "1px solid #1A8FA6" }}
             >
-              <p className="font-sans text-sm text-td-muted">
-                Your workshop slide deck
-              </p>
-            </div>
+              <source
+                src="https://cdn.coverr.co/videos/coverr-typing-on-a-laptop-5402/1080p.mp4"
+                type="video/mp4"
+              />
+            </video>
             <p className="font-sans text-sm text-td-text mb-4">
               Your slides, built and ready to present
             </p>
@@ -197,13 +200,13 @@ function ProductSection() {
             </div>
           </div>
           <div
-            className="bg-td-card rounded-lg overflow-hidden"
+            className="bg-td-card rounded-lg overflow-hidden self-start"
             style={{ border: "0.5px solid rgba(10,25,41,0.1)" }}
           >
             {deliverables.map((d, i) => (
               <div
-                key={d}
-                className="px-5 py-4 font-sans text-td-text text-sm"
+                key={d.text}
+                className="px-5 py-4 font-sans text-td-text text-sm flex items-center gap-3"
                 style={{
                   borderBottom:
                     i < deliverables.length - 1
@@ -211,7 +214,8 @@ function ProductSection() {
                       : "none",
                 }}
               >
-                {d}
+                <span className="text-base">{d.icon}</span>
+                <span>{d.text}</span>
               </div>
             ))}
           </div>
@@ -225,19 +229,19 @@ function ProductSection() {
 }
 
 const testimonials = [
-  { stat: "27", quote: "Our last event had 80 bookings, 60 attendees, and 27 new patients booked on the night.", name: "Dr Ian Carter", loc: "" },
-  { stat: "36", quote: "This completely changed the quality of patients coming into our clinic. We filled the room and converted nearly half into care.", name: "Dr Helen Harding", loc: "" },
-  { stat: "17", quote: "We had 70 leads, 39 attendees, and converted 17 brand new patients plus reactivations. Absolutely incredible.", name: "Dr Peter Townsend", loc: "" },
-  { stat: "14", quote: "Our last talk brought in over 50 leads, 32 attendees, and 14 new patients. We've already got 15 booked for the next one.", name: "Dr Lindsay McInnis", loc: "" },
-  { stat: "15", quote: "We've been running these for over 2 years now and they just keep improving. The patients coming from workshops have far more trust.", name: "Dr Chris Braxton", loc: "" },
-  { stat: "18", quote: "We generated over 70 leads and had to run another workshop just to keep up with demand.", name: "Dr Will Goddard", loc: "" },
+  { stat: "27", quote: "Our last event had 80 bookings, 60 attendees, and 27 new patients booked on the night.", name: "Dr Ian Carter" },
+  { stat: "36", quote: "This completely changed the quality of patients coming into our clinic. We filled the room and converted nearly half into care.", name: "Dr Helen Harding" },
+  { stat: "17", quote: "We had 70 leads, 39 attendees, and converted 17 brand new patients plus reactivations. Absolutely incredible.", name: "Dr Peter Townsend" },
+  { stat: "14", quote: "Our last talk brought in over 50 leads, 32 attendees, and 14 new patients. We've already got 15 booked for the next one.", name: "Dr Lindsay McInnis" },
+  { stat: "15", quote: "We've been running these for over 2 years now and they just keep improving. The patients coming from workshops have far more trust.", name: "Dr Chris Braxton" },
+  { stat: "18", quote: "We generated over 70 leads and had to run another workshop just to keep up with demand.", name: "Dr Will Goddard" },
 ];
 
 function ResultsSection() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-15">
       <DashedDivider />
-      <div className="pt-16">
+      <div className="pt-10 md:pt-12">
         <h2 className="font-serif text-3xl md:text-4xl font-semibold text-td-text mb-12 text-center">
           Real workshops. Real patients. Real results.
         </h2>
@@ -258,6 +262,15 @@ function ResultsSection() {
               <p className="font-sans text-sm font-medium text-td-text">{t.name}</p>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-10">
+          <Link
+            to="/training"
+            className="inline-flex items-center justify-center rounded-md border bg-transparent text-td-text font-sans text-sm font-medium px-5 py-2.5 transition-colors hover:bg-td-text/5"
+            style={{ border: "0.5px solid rgba(10,25,41,0.2)" }}
+          >
+            Watch the training →
+          </Link>
         </div>
       </div>
     </section>
@@ -290,7 +303,7 @@ const paths = [
 
 function EcosystemSection() {
   return (
-    <section className="bg-td-dark py-20">
+    <section className="bg-td-dark py-12 md:py-15">
       <div className="max-w-6xl mx-auto px-6">
         <Eyebrow>
           <span className="text-td-teal">EVERYTHING YOU NEED</span>
@@ -334,6 +347,80 @@ function EcosystemSection() {
   );
 }
 
+const growthLabStats = [
+  { stat: "35 patients", quote: "Dr Alex Lundborn reactivated 35 patients in 60 days" },
+  { stat: "37 patients", quote: "Dr Austin Wells-Burr had 37 new patients within 6 weeks" },
+  { stat: "34 patients", quote: "Dr Liz Walker reactivated 34 patients with the done-for-you campaign" },
+];
+
+function GrowthLabSection() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-15">
+      <DashedDivider />
+      <div className="pt-10 md:pt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <Eyebrow>WANT TO GO FURTHER?</Eyebrow>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-td-text mb-6 leading-tight">
+            Work one-on-one with <em className="text-td-teal italic">me</em> for 60 days.
+          </h2>
+          <p className="font-sans text-td-muted text-base leading-relaxed mb-6">
+            Every month, I accept a handful of practices to work directly with me —
+            with one goal: building an insanely profitable, impactful, and time-rich
+            7-figure practice. The last 10 Growth Lab members generated an average
+            of 27 extra new patients in their first 60 days. It pays for itself fast.
+          </p>
+          <ul className="space-y-2 mb-8">
+            {[
+              "1:1 strategy sessions with Ryan",
+              "Done-with-you implementation",
+              "60-day love it or leave it guarantee",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-2 font-sans text-sm text-td-text">
+                <span className="text-td-teal">✓</span> {item}
+              </li>
+            ))}
+          </ul>
+          <p className="font-serif italic text-td-text text-lg mb-8">
+            "Only 7 practices accepted each month."
+          </p>
+          <a
+            href="https://growth-lab-landing.lovable.app/growth-lab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md bg-td-teal text-white font-sans font-medium text-base px-10 py-4 transition-colors hover:opacity-90"
+          >
+            Join the Growth Lab waitlist →
+          </a>
+        </div>
+        <div
+          className="bg-td-card rounded-lg overflow-hidden"
+          style={{ border: "0.5px solid rgba(10,25,41,0.1)" }}
+        >
+          {growthLabStats.map((s, i) => (
+            <div
+              key={s.stat}
+              className="p-6"
+              style={{
+                borderBottom:
+                  i < growthLabStats.length - 1
+                    ? "0.5px solid rgba(10,25,41,0.1)"
+                    : "none",
+              }}
+            >
+              <p className="font-serif text-2xl font-semibold text-td-teal mb-2">
+                {s.stat}
+              </p>
+              <p className="font-serif italic text-td-text text-sm leading-relaxed">
+                "{s.quote}"
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const stats = [
   { label: "practices", value: "8" },
   { label: "annual revenue", value: "$7M" },
@@ -343,9 +430,9 @@ const stats = [
 
 function CredibilitySection() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-15">
       <DashedDivider />
-      <div className="pt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="pt-10 md:pt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <Eyebrow>WHY LISTEN TO RYAN?</Eyebrow>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-td-text mb-8 leading-tight">
@@ -393,7 +480,7 @@ function CredibilitySection() {
 
 function FinalCTA() {
   return (
-    <section className="bg-td-teal py-20">
+    <section className="bg-td-teal py-12 md:py-15">
       <div className="max-w-2xl mx-auto px-6 text-center">
         <h2 className="font-serif text-3xl md:text-4xl font-semibold text-white mb-4">
           Your next workshop builds itself.
@@ -448,6 +535,7 @@ function HomePage() {
       <ProductSection />
       <ResultsSection />
       <EcosystemSection />
+      <GrowthLabSection />
       <CredibilitySection />
       <FinalCTA />
       <Footer />
