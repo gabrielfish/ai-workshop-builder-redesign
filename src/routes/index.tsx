@@ -158,13 +158,13 @@ function ProductSection() {
         <Eyebrow>THE AI WORKSHOP BUILDER</Eyebrow>
         <h2 className="font-serif text-3xl md:text-4xl font-semibold text-td-text mb-12">
           Answer a few questions.
-          <br className="hidden md:block" /> We handle everything else.
+          <br className="hidden md:block" /> AI handles everything else.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12 items-start">
           <div>
             <p className="font-sans text-td-muted text-base leading-relaxed mb-8">
-              This is the system we built to remove every barrier chiropractors face
-              when running workshops. In minutes, it builds everything you need to
+              This is the AI system built to remove every barrier chiropractors face
+              when running workshops. In minutes, AI builds everything you need to
               fill your room and convert attendees into long-term patients.
             </p>
             <video
