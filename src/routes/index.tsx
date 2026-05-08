@@ -50,10 +50,10 @@ function Nav() {
   return (
     <nav className="w-full border-b border-td-text/10" style={{ borderWidth: "0.5px" }}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <div className="flex items-center gap-2">
+        <a href="https://ai-workshop-builder-redesign.lovable.app/" className="flex items-center gap-2">
           <div className="w-6 h-6 border border-td-text/40 rounded-sm" style={{ borderWidth: "0.5px" }} />
           <span className="font-serif text-lg font-semibold text-td-text tracking-tight">TalkDeck</span>
-        </div>
+        </a>
         <div className="hidden md:flex items-center gap-8 text-sm font-sans">
           <Link to="/training" className="text-td-muted hover:text-td-text transition-colors">
             Training
@@ -61,9 +61,9 @@ function Nav() {
           <span className="text-td-text underline underline-offset-4 decoration-td-teal">
             Build my workshop
           </span>
-          <Link to="/growth-lab" className="text-td-muted hover:text-td-text transition-colors">
+          <a href="https://growth-lab-landing.lovable.app/growth-lab" className="text-td-muted hover:text-td-text transition-colors">
             Join Growth Lab
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
@@ -264,13 +264,12 @@ function ResultsSection() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <Link
-            to="/training"
-            className="inline-flex items-center justify-center rounded-md border bg-transparent text-td-text font-sans text-sm font-medium px-5 py-2.5 transition-colors hover:bg-td-text/5"
-            style={{ border: "0.5px solid rgba(10,25,41,0.2)" }}
+          <a
+            href="#build"
+            className="inline-flex items-center justify-center rounded-md bg-td-teal text-white font-sans font-medium text-base px-10 py-4 transition-colors hover:opacity-90"
           >
-            Watch the training →
-          </Link>
+            Build my slides — it's free to start →
+          </a>
         </div>
       </div>
     </section>
