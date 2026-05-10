@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import aiWorkshopBuilderGif from "@/assets/ai-workshop-builder.gif";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
