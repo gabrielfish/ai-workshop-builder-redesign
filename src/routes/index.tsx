@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import aiWorkshopBuilderGif from "@/assets/ai-workshop-builder.gif";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -167,20 +168,12 @@ function ProductSection() {
               when running workshops. In minutes, AI builds everything you need to
               fill your room and convert attendees into long-term patients.
             </p>
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80"
+            <img
+              src={aiWorkshopBuilderGif}
+              alt="AI Workshop Builder demo"
               className="rounded-lg w-full aspect-[16/10] object-cover mb-4 bg-td-card"
               style={{ border: "1px solid #1A8FA6" }}
-            >
-              <source
-                src="https://cdn.coverr.co/videos/coverr-typing-on-a-laptop-5402/1080p.mp4"
-                type="video/mp4"
-              />
-            </video>
+            />
             <p className="font-sans text-sm text-td-text mb-4">
               Your slides, built and ready to present
             </p>
