@@ -515,9 +515,30 @@ function Footer() {
             TalkDeck
           </span>
         </div>
-        <p className="font-sans text-xs text-td-muted">
-          © 2026 DC Practice Growth. All rights reserved.
-        </p>
+        <div className="flex flex-col sm:items-end gap-1 items-center">
+          <p className="font-sans text-xs text-td-muted text-center sm:text-right">
+            © 2026 DC Practice Growth. All rights reserved.
+          </p>
+          <p className="font-sans text-xs text-td-muted flex items-center gap-2">
+            <a
+              href="https://dcpracticegrowth.com/privacy-cookie-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-td-text transition-colors"
+            >
+              Privacy &amp; Cookie Policy
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://dcpracticegrowth.com/terms-of-service/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-td-text transition-colors"
+            >
+              Terms of Service
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
